@@ -1,0 +1,100 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Sep 28, 2023, 7:23:30 PM
+    Author     : faria
+*/
+
+* {
+    box-sizing: border-box
+}
+body {
+    font-family: sans serif;
+    padding: 80px 20px 0;
+    background-color: bisque;
+}
+
+h1{
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    background-color: goldenrod;
+}
+
+.aside{
+    position: fixed;
+    top: 20%;
+    left: 0%;
+    width: 20%;
+    height: 75%;
+    background-color: lightskyblue;
+}
+.noticia{
+    background-color: antiquewhite;
+}
+
+.section{
+    position: fixed;
+    top: 20%;
+    left: 20%;
+    width: 80%;
+    height: 75%;
+    background-color: yellowgreen;
+    overflow-y: scroll;
+}
+
+.footer{
+    position: fixed;
+    bottom: 0;
+    left: 0%;
+    width: 100%;
+    height: 5%;
+    background-color: darksalmon;
+    text-align: center;
+}
+
+.logo{
+    font-size: 30px;
+    font-weight: bold;
+    padding: 0 40px;
+    line-height: 90px;
+}
+
+.nav{
+    display:flex;
+    justify-content: space-between;
+    max-width: 992px;
+    margin: 0 auto;
+}
+
+.nav-link{
+    color: white;
+    text-decoration: none;
+}
+
+.nav-menu{
+    display:flex;
+    margin-right: 40px;
+    list-style: none;
+}
+
+.nav-menu-link{
+    font-size: 10px;
+    margin: 0 10px;
+    line-height: 90px;
+    width: max-content;    
+}
+
+.nav-menu-item{
+    
+}
