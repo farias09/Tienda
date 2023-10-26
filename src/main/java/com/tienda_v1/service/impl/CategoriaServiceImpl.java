@@ -6,18 +6,39 @@ import com.tienda_v1.service.CategoriaService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 
 @Service
-public class CategoriaServiceImpl implements CategoriaService{
-    
-    @Autowired //La anotacion autowired crea un unico objeto mientras se ejecuta la aplicacion   
+public class CategoriaServiceImpl implements CategoriaService {
+
+    @Autowired
     private CategoriaDao categoriaDao;
-    public List<Categoria> getCategorias(boolean activos){
-        var lista = categoriaDao.findAll(); //encontrar todos los datos que tenga la lista
-        
-        if(activos){
-            lista.removeIf(e-> !e.isActivo()); //nos permite saber si el objeto esta activo o no
+    @Override
+    @Transactional(readOnly = true)
+    public List<Categoria> getCategorias(boolean activos) {
+        var lista = categoriaDao.findAll();
+        if (activos) {
+            lista.removeIf(e -> !e.isActivo());
         }
         return lista;
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public Categoria getCategoria(Categoria categoria) {
+        return categoriaDao.findById(categoria.getIdCategoria()).orElse(null);
+    }
+
+    @Override
+    @Transactional
+    public void save(Categoria categoria) {
+        categoriaDao.save(categoria);
+    }
+
+    @Override
+    @Transactional
+    public void delete(Categoria categoria) {
+        categoriaDao.delete(categoria);
     }
 }
